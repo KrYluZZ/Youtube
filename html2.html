@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<HTML>
+<HEAD>
+<TITLE> Wormix </TITLE>
+<style>
+  /* Styl dla obrazka t³a */
+  #background {
+    background-image: url("tlo.png");
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Zmiana z-index, aby t³o by³o wyœwietlane nad odtwarzaczem */
+  }
+
+  /* Styl dla przycisku odtwarzacza */
+  #playButton {
+    display: none; /* Ukrycie przycisku */
+  }
+
+  /* Styl dla warstwy odtwarzacza */
+  #audioLayer {
+    position: relative; /* Ustalenie warstwy odtwarzacza jako relatywnej */
+    z-index: 0; /* Ustalenie ni¿szego z-index dla odtwarzacza, aby by³ pod t³em */
+  }
+</style>
+</HEAD>
+<BODY>
+<div id="background" onclick="playAudio()"></div>
+<div id="audioLayer">
+  <!-- Przycisk odtwarzacza nie jest widoczny, ale po klikniêciu na t³o zostanie uruchomiony odtwarzacz -->
+  <audio id="audioPlayer1" controls loop>
+    <source src="szmata.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  
+  <audio id="audioPlayer2" controls loop>
+    <source src="szmata1.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
+<script>
+  function playAudio() {
+    var audioPlayer1 = document.getElementById("audioPlayer1");
+    var audioPlayer2 = document.getElementById("audioPlayer2");
+    
+    audioPlayer1.play();
+    audioPlayer2.play();
+    
+    // Zapisanie informacji do Local Storage
+    localStorage.setItem("audioPlaying", "true");
+  }
+  
+  // Dodanie zdarzenia przed zamkniêciem strony
+  window.addEventListener("beforeunload", function (event) {
+    event.preventDefault();
+    event.returnValue = ""; // Stary sposób dla niektórych przegl¹darek
+  });
+</script>
+</BODY>
+</HTML>
