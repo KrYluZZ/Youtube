@@ -3,7 +3,7 @@
 <head>
   <title>Wormix</title>
   <style>
-    /* Styl dla obrazka t³a */
+    /* Styl dla obrazka tÂ³a */
     #background {
       background-image: url("tlo.png");
       width: 100%;
@@ -12,10 +12,10 @@
       top: 0;
       left: 0;
       z-index: 1;
-      cursor: pointer; /* Dodanie kursora wskazuj¹cego, ¿e t³o jest klikalne */
+      cursor: pointer; /* Dodanie kursora wskazujÂ¹cego, Â¿e tÂ³o jest klikalne */
     }
 
-    /* Styl dla p³ywaj¹cej warstwy */
+    /* Styl dla pÂ³ywajÂ¹cej warstwy */
     #floatingLayer {
       width: 300px;
       height: 200px;
@@ -25,7 +25,7 @@
       left: 50%;
       transform: translate(-50%, -50%);
       z-index: 2;
-      display: none; /* Ukrycie warstwy na pocz¹tku */
+      display: none; /* Ukrycie warstwy na poczÂ¹tku */
       padding: 20px;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -46,7 +46,7 @@
 <body>
   <div id="background" onclick="playAudio()"></div>
   <div id="floatingLayer">
-    <h2>RYSZARD BIJE MIŒKÊ!!!</h2>
+    <h2>RYSZARD BIJE MIÅ’KÃŠ!!!</h2>
     <p>Pozdrawiam KrYlu JP RYSZARD JP ARO JP DAWID.</p>
     <img src="bije.gif" alt="Bije GIF" width="100" height="100"> <!-- Zmniejszone wymiary obrazka -->
   </div>
@@ -71,18 +71,18 @@
       audioPlayer1.play();
       audioPlayer2.play();
 
-      // Poka¿ p³ywaj¹c¹ warstwê
+      // PokaÂ¿ pÂ³ywajÂ¹cÂ¹ warstwÃª
       floatingLayer.style.display = "block";
     }
 
     function closeFloatingLayer() {
       var floatingLayer = document.getElementById("floatingLayer");
 
-      // Ukryj p³ywaj¹c¹ warstwê
+      // Ukryj pÂ³ywajÂ¹cÂ¹ warstwÃª
       floatingLayer.style.display = "none";
     }
 
-    // Dodanie zdarzenia przed zamkniêciem strony
+    // Dodanie zdarzenia przed zamkniÃªciem strony
     window.addEventListener("beforeunload", function (event) {
       event.preventDefault();
       event.returnValue = "";
